@@ -1,0 +1,30 @@
+{
+  "evidence_id": "AECE-002",
+  "study": "H8-M",
+  "methodological_status": "controlled paired mechanistic experiment",
+  "cohort": {
+    "paired_sessions": 53,
+    "evaluated_cases": 106
+  },
+  "clean_retention": {
+    "classifier_only": "53/53",
+    "classifier_plus_aece": "53/53"
+  },
+  "modified_control_reliance": {
+    "classifier_only": "53/53",
+    "classifier_plus_aece": "2/53"
+  },
+  "aece_modified_control_non_reliance": {
+    "count": "51/53",
+    "rate_percent": 96.23,
+    "wilson_95_percent": [87.25, 98.96]
+  },
+  "secondary_exact_two_sided_p_value": 8.881784197001252e-16,
+  "frozen_result_identity_sha256": "547BD9E1E0DF965715E951234DC2A9FFDA422FF2163BA90ACD1F1CD154F005DF",
+  "limitations": [
+    "Phase-only artificial intervention.",
+    "Not natural-confuser testing.",
+    "Not field or external validation.",
+    "Not a real-world false-alarm estimate."
+  ]
+}

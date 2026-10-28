@@ -1,0 +1,11 @@
+{
+  "evidence_id": "TEST-001",
+  "verification_date": "2026-09-24",
+  "passed": {
+    "aece_specific_tests": 267,
+    "project_smoke_tests": 36,
+    "multimodal_tests": 70
+  },
+  "scientific_performance_claimed": false,
+  "interpretation": "Software verification only; not scientific performance or field validation."
+}

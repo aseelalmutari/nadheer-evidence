@@ -1,0 +1,26 @@
+{
+  "evidence_id": "TRAIN-001",
+  "model": "clean acoustic CRNN",
+  "dataset": {
+    "train_samples": 10913,
+    "validation_samples": 2238,
+    "held_out_test_samples": 2370,
+    "test_drone_samples": 1430,
+    "test_not_drone_samples": 940,
+    "corrected_two_second_rows": 208,
+    "corrected_one_second_rows": 416
+  },
+  "held_out_internal_results": {
+    "decision_threshold": 0.5,
+    "true_negative": 932,
+    "false_positive": 8,
+    "false_negative": 13,
+    "true_positive": 1417,
+    "accuracy": 0.9911392405063291,
+    "recall": 0.990909090909091,
+    "false_positive_rate": 0.00851063829787234
+  },
+  "evidence_scope": "internal dataset-based evaluation",
+  "field_performance_claimed": false,
+  "mandatory_interpretation": "Internal dataset-based evaluation; not field performance; at decision threshold 0.50."
+}
