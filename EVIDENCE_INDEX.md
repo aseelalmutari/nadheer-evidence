@@ -12,6 +12,16 @@ This index maps public claims to approved, sanitized evidence artifacts and stat
 - **Limitation:** The screenshot visibly reports `demo mode`; it is not a live field experiment, accuracy result, or operational validation.
 - **Status:** `APPROVED FOR PUBLIC RELEASE`
 
+## VIDEO-PLATFORM-001
+
+- **Claim:** A recorded demonstration shows operation of the implemented NADHEER dashboard and its principal interfaces.
+- **Artifact:** [Platform demonstration](media/videos/nadheer_platform_demo.mp4)
+- **SHA-256:** `FDCE904226076208479DB167BF9622955BC2EA94198D07EF4197D4FFD00FF243`
+- **Source type:** Owner-supplied project recording; video stream copied without re-encoding and silent audio track removed.
+- **Scope:** Visible implementation, interface operation, live status updates, offline audio-analysis interface, and AECE Decision Lab replay.
+- **Limitation:** Demonstration evidence only; not detection-accuracy, field-performance, false-alarm-rate, operational-range, or external-validation evidence.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
 ## TRAIN-001
 
 - **Claim:** The clean acoustic CRNN achieved accuracy 0.9911, recall 0.9909, and false-positive rate 0.0085 on a 2,370-sample held-out internal test split at decision threshold 0.50 (TN=932, FP=8, FN=13, TP=1,417).
@@ -40,6 +50,37 @@ This index maps public claims to approved, sanitized evidence artifacts and stat
 - **SHA-256:** `8BAFF41C6ADAE8EF1DE0F4966C87FC3F4BA8331F89AF78947DA1F190A5E2FF3D`
 - **Scope:** Visualization of AECE-002 only.
 - **Limitation:** The chart has the same controlled, artificial-intervention, non-field boundaries as AECE-002.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
+## AECE-UI-001
+
+- **Claim:** The AECE Decision Lab deterministically replays the frozen H8-M evidence.
+- **Artifact:** [Decision Lab screenshot](media/images/aece_decision_lab.png)
+- **SHA-256:** `2A3329FE39EC2B55667557264CB1C4A27984A10419D531985B05271F5832E717`
+- **Source type:** Project screenshot captured from the implemented interface.
+- **Scope:** Interface and deterministic replay evidence.
+- **Fingerprint clarification:** The truncated fingerprint visible in the image identifies the archived copy of the result file with Windows (CRLF) line endings. After line-ending normalization it matches the frozen H8-M result identity (547BD9E1…05DF).
+- **Limitation:** Not a new experiment; AECE is not yet part of the live detection loop.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
+## AECE-ARCH-001
+
+- **Claim:** AECE has a high-level decision-conditioned path, independent reference path, observability gate, physical compatibility state, and reliance-control output.
+- **Artifact:** [High-level diagram](media/images/aece_dual_path.png)
+- **SHA-256:** `F4C1A15AD40955CA27C148EFAAA581E65AE95A4741ECE0A522F5FC45C6670F78`
+- **Source type:** Project conceptual diagram.
+- **Scope:** Conceptual architecture only.
+- **Limitation:** Rules, thresholds, equations, calibration, code, and raw inputs are intentionally omitted.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
+## VIDEO-AECE-001
+
+- **Claim:** The platform demonstration shows the AECE Decision Lab replaying the aggregate H8-M evidence.
+- **Artifact:** [Platform demonstration (Decision Lab segment)](media/videos/nadheer_platform_demo.mp4)
+- **SHA-256:** `FDCE904226076208479DB167BF9622955BC2EA94198D07EF4197D4FFD00FF243`
+- **Source type:** Same recording as VIDEO-PLATFORM-001.
+- **Scope:** Interface replay of the published aggregate H8-M evidence.
+- **Limitation:** Not a new experiment, not disclosure of protected implementation rules, and not field or external validation.
 - **Status:** `APPROVED FOR PUBLIC RELEASE`
 
 ## AECE-003

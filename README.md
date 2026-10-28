@@ -2,7 +2,11 @@
 
 NADHEER addresses the limitations of isolated drone-detection signals by integrating acoustic sensing, visual detection, and decision-level physical-consistency verification in a working edge platform. Documented model training, software verification, and controlled paired experiments provide traceable evidence of the implemented system; no completed field validation is claimed.
 
-![NADHEER implemented multimodal research dashboard](media/images/nadheer_live_system.png)
+[![NADHEER implemented multimodal research dashboard](media/images/nadheer_live_system.png)](media/videos/nadheer_platform_demo.mp4)
+
+> **Demonstration notice:** The image above links to a recorded 49-second demonstration of the implemented NADHEER interface, including the AECE Decision Lab, which replays preserved H8-M evidence. It does not establish detection accuracy, field false-alarm rate, operational range, or external validation.
+
+### [Watch the Platform Demo](media/videos/nadheer_platform_demo.mp4)
 
 ### [View AECE Controlled Evidence](evidence/aece/README.md)
 
@@ -33,10 +37,29 @@ The implemented platform provides:
 - camera-based visual detection and tracking;
 - decision fusion and alert-state computation;
 - append-only event evidence logging;
-- a live browser dashboard; and
+- a live browser dashboard;
+- an AECE Decision Lab that replays preserved H8-M evidence deterministically; and
 - documented AECE controlled experimental evidence.
 
 The dashboard screenshot establishes implementation of the interface. Because it visibly reports `demo mode`, it is not presented as a field experiment or accuracy result. [Evidence: SYS-001](EVIDENCE_INDEX.md#sys-001)
+
+### AECE architecture
+
+AECE uses a decision-conditioned path and an independent reference path to reach a high-level verification state before reliance is controlled.
+
+[![High-level AECE dual path](media/images/aece_dual_path.png)](evidence/aece/README.md#conceptual-position)
+
+This conceptual view intentionally omits rules, thresholds, equations, calibration methods and code. [Evidence: AECE-ARCH-001](EVIDENCE_INDEX.md#aece-arch-001)
+
+### Platform demonstration and AECE Decision Lab
+
+The 49-second recording shows the dashboard receiving live system updates, the offline audio-analysis interface, the AECE Decision Lab, and the return to the dashboard. The video stream was copied without re-encoding and its effectively silent audio track was removed. [Evidence: VIDEO-PLATFORM-001](EVIDENCE_INDEX.md#video-platform-001)
+
+The Decision Lab replays the frozen H8-M evidence deterministically; it does not re-run inference and is not a new experiment. AECE is not yet part of the live detection loop. [Evidence: AECE-UI-001](EVIDENCE_INDEX.md#aece-ui-001) · [Evidence: VIDEO-AECE-001](EVIDENCE_INDEX.md#video-aece-001)
+
+[![AECE Decision Lab](media/images/aece_decision_lab.png)](evidence/aece/README.md)
+
+The truncated fingerprint visible in the Decision Lab image identifies the archived copy of the result file with Windows (CRLF) line endings. After line-ending normalization it matches the frozen H8-M result identity (547BD9E1…05DF).
 
 ## 5. Development Evidence
 
@@ -104,7 +127,7 @@ Preserved logs report 267 AECE-specific tests, 36 project smoke tests, and 70/70
 - H8-M uses a controlled phase-only artificial intervention rather than natural environmental confusers.
 - H8-M did not exercise the Unavailable state; all 53 phase-modified controls resolved to a decisive state, so observability-aware unavailability is untested in this experiment.
 - Classifier metrics come from an internal dataset-based split and are not field performance.
-- The dashboard screenshot establishes visible interface implementation only.
+- The dashboard screenshot, Decision Lab image and demonstration video establish visible interface implementation and evidence replay only.
 - Third-party datasets are referenced, not redistributed; see [datasets/README.md](datasets/README.md) for licence and attribution notes.
 - Software-test counts establish covered implementation behavior, not scientific generalization.
 - H8-N and H8-O are post-hoc analyses; in H8-L and H8-O the reference hypothesis was held at its clean value, so the reference path's response to modified recordings was not tested.
