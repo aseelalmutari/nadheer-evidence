@@ -14,7 +14,7 @@ NADHEER addresses the limitations of isolated drone-detection signals by integra
 
 NADHEER is a local, edge-oriented multimodal research platform for detecting and evaluating possible drone-related events. Its implemented software joins acoustic classification, multichannel direction estimation when array input is available, visual detection, object tracking, decision fusion, evidence logging, and a browser dashboard. [Evidence: SYS-001](EVIDENCE_INDEX.md#sys-001)
 
-AECE, the Acoustic Evidence Consistency Evaluation, is integrated as a decision-level verification layer. The public description is intentionally functional and does not expose protected implementation details or source code.
+AECE, the Acoustic Evidence Consistency Evaluation, is a decision-level verification layer implemented as a research module and evaluated on preserved recordings; it is not yet part of the live detection loop. The public description is intentionally functional and does not expose protected implementation details or source code.
 
 ## 2. Research Problem
 
@@ -74,6 +74,25 @@ This phase-only artificial intervention was not natural-confuser testing, **not 
 
 [![H8-M decision reliance chart](media/images/h8m_reliance_chart.png)](evidence/aece/README.md#h8-m-result)
 
+### Follow-up analyses (post-hoc)
+
+Two follow-up analyses, each with a protocol frozen by SHA-256 before computation, test what H8-M can and cannot show. [Evidence: AECE-003](EVIDENCE_INDEX.md#aece-003) · [Evidence: AECE-004](EVIDENCE_INDEX.md#aece-004)
+
+- **H8-N:** a decision-agnostic inter-channel coherence check also retained 53/53 clean cases and withheld reliance on 53/53 phase-modified controls. H8-M therefore shows sensitivity to spatial invalidation but does not by itself distinguish AECE from a generic coherence check.
+- **H8-O:** phase was randomized only in the time-frequency regions supporting the classifier decision (A) or in an equal number of other regions (B).
+
+| Condition | Classifier + AECE withheld | Coherence check withheld |
+|---|---|---|
+| Clean | 0/53 | 0/53 |
+| A: decision-supporting regions modified | 51/53 (Wilson 95% 87.25%-98.96%) | 30/53 |
+| B: equal number of other regions modified | 0/53 (Wilson 95% 0%-6.76%) | 34/53 |
+
+The B result follows from AECE's design, because its decision path reads only decision-supporting regions; H8-O verifies that decision conditioning works as designed. Machine-readable values are in the [follow-up summary](evidence/aece/h8_followup_public_summary.json).
+
+### Runtime
+
+In the unoptimised research implementation, processing takes a median 2.59 s (p95 2.94 s) per one-second decision window on an Intel Core i7-10750H CPU. This is not real-time; optimisation and edge-device timing are future work. [Evidence: RUN-001](EVIDENCE_INDEX.md#run-001)
+
 ### Software verification
 
 Preserved logs report 267 AECE-specific tests, 36 project smoke tests, and 70/70 multimodal tests passed. These counts are software verification only; they are not scientific performance or field validation. [Evidence: TEST-001](EVIDENCE_INDEX.md#test-001)
@@ -88,6 +107,8 @@ Preserved logs report 267 AECE-specific tests, 36 project smoke tests, and 70/70
 - The dashboard screenshot establishes visible interface implementation only.
 - Third-party datasets are referenced, not redistributed; see [datasets/README.md](datasets/README.md) for licence and attribution notes.
 - Software-test counts establish covered implementation behavior, not scientific generalization.
+- H8-N and H8-O are post-hoc analyses; in H8-L and H8-O the reference hypothesis was held at its clean value, so the reference path's response to modified recordings was not tested.
+- AECE is a research module and is not yet part of the live detection loop; current runtime is not real-time.
 - The application has not been granted, and no absolute world-first novelty is claimed.
 
 ## 10. Scientific References

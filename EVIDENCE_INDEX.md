@@ -42,6 +42,36 @@ This index maps public claims to approved, sanitized evidence artifacts and stat
 - **Limitation:** The chart has the same controlled, artificial-intervention, non-field boundaries as AECE-002.
 - **Status:** `APPROVED FOR PUBLIC RELEASE`
 
+## AECE-003
+
+- **Claim:** A decision-agnostic coherence check retained 53/53 clean cases and withheld reliance on 53/53 H8-M phase-modified controls (H8-N).
+- **Artifact:** [Follow-up summary](evidence/aece/h8_followup_public_summary.json)
+- **SHA-256:** `B50378B4A05533FE1A17F5CEA917D0908ED463104175CDC66571438EDBFD9CEB`
+- **Source type:** Sanitized derivative of the frozen post-hoc result files (identities listed in the artifact).
+- **Scope:** Post-hoc baseline comparison on the H8-M cases.
+- **Limitation:** Shows that H8-M alone does not distinguish AECE from a generic coherence check; not field validation.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
+## AECE-004
+
+- **Claim:** Under decision-localized phase invalidation AECE withheld reliance in 51/53 sessions and under equal-size off-decision invalidation in 0/53; the coherence check withheld in 30/53 and 34/53 (H8-O).
+- **Artifact:** [Follow-up summary](evidence/aece/h8_followup_public_summary.json)
+- **SHA-256:** `B50378B4A05533FE1A17F5CEA917D0908ED463104175CDC66571438EDBFD9CEB`
+- **Source type:** Sanitized derivative of the frozen post-hoc result files (identities listed in the artifact).
+- **Scope:** Post-hoc controlled test of decision conditioning.
+- **Limitation:** The off-decision result follows from AECE design; reference path held at its clean value; artificial intervention; not field validation.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
+## RUN-001
+
+- **Claim:** Median processing time is 2.59 s (p95 2.94 s) per one-second decision window on an Intel Core i7-10750H CPU (H8-P).
+- **Artifact:** [Follow-up summary](evidence/aece/h8_followup_public_summary.json)
+- **SHA-256:** `B50378B4A05533FE1A17F5CEA917D0908ED463104175CDC66571438EDBFD9CEB`
+- **Source type:** Sanitized derivative of the frozen post-hoc result files (identities listed in the artifact).
+- **Scope:** Runtime of the unoptimised research implementation.
+- **Limitation:** Not real-time; not edge-device timing.
+- **Status:** `APPROVED FOR PUBLIC RELEASE`
+
 ## TEST-001
 
 - **Claim:** Preserved logs report 267 AECE-specific, 36 project smoke, and 70/70 multimodal passed tests.

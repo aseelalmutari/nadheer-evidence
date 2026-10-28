@@ -12,6 +12,14 @@ The exact two-sided paired secondary analysis value was `8.881784197001252e-16`.
 
 Machine-readable public values are in the [sanitized H8-M summary](h8m_public_summary.json).
 
+## Follow-up analyses (post-hoc)
+
+- **H8-N:** a decision-agnostic coherence check also achieved 53/53 clean retention and 53/53 withholding on the H8-M phase-modified controls, so H8-M alone does not distinguish AECE from a generic coherence check.
+- **H8-O:** when phase was randomized only in decision-supporting regions, AECE withheld reliance in 51/53 sessions; when an equal number of other regions was modified, it withheld in 0/53. The coherence check withheld in 30/53 and 34/53 sessions respectively. The 0/53 result follows from AECE's design.
+- **H8-P:** median processing time 2.59 s (p95 2.94 s) per one-second window on an Intel Core i7-10750H CPU; unoptimised and not real-time.
+
+Values and frozen result identities are in the [follow-up summary](h8_followup_public_summary.json).
+
 ## Mandatory limitations
 
 - H8-M used a phase-only artificial intervention that changed phase structure while preserving the controlled classifier score.
@@ -19,5 +27,6 @@ Machine-readable public values are in the [sanitized H8-M summary](h8m_public_su
 - This was **not field or external validation**.
 - The 96.23% result is **not a real-world false-alarm estimate**.
 - All 53 sessions of an outcome-blind, hash-based held-out split were included without exclusion; retention applies to classifier-gate-pass sessions from one dataset, not general sensitivity.
+- H8-N and H8-O are post-hoc; in H8-L and H8-O the reference hypothesis was held at its clean value, so the reference path was not tested on modified recordings.
 - H8-M did not exercise the Unavailable state; all 53 phase-modified controls resolved to a decisive state, so observability-aware unavailability is untested in this experiment.
 

@@ -1,0 +1,70 @@
+{
+  "evidence_ids": [
+    "AECE-003",
+    "AECE-004",
+    "RUN-001"
+  ],
+  "status": "post-hoc follow-up analyses added after H8-M; each protocol frozen by SHA-256 before computation",
+  "H8-N_decision_agnostic_coherence_baseline": {
+    "description": "Mean inter-channel phase coherence over 28 microphone pairs in the same one-second window; threshold = minimum score of 54 development sessions; applied to the H8-M clean and phase-modified cases.",
+    "clean_retention": "53/53",
+    "phase_modified_withheld": "53/53",
+    "aece_reference": {
+      "clean_retention": "53/53",
+      "phase_modified_withheld": "51/53"
+    },
+    "interpretation": "H8-M shows sensitivity to spatial invalidation but does not by itself distinguish AECE from a generic coherence check.",
+    "frozen_result_identity_sha256": "5E14F19D7FE5DB36AE407F79BE7F08BF915661E90C25478F374885652A73E8E6"
+  },
+  "H8-O_decision_localized_vs_off_decision_invalidation": {
+    "description": "Phase randomized only in time-frequency bins supporting the classifier decision (A) or in an equal number of other bins (B); magnitude and classifier probability unchanged; 53 sessions.",
+    "aece_withheld": {
+      "clean": "0/53",
+      "A": "51/53",
+      "A_wilson_95_percent": [
+        87.25,
+        98.96
+      ],
+      "B": "0/53",
+      "B_wilson_95_percent": [
+        0.0,
+        6.76
+      ]
+    },
+    "aece_states_after_A": {
+      "Inconsistent": 51,
+      "Compatible": 2,
+      "Unavailable": 0
+    },
+    "discordant_pairs": {
+      "A_only": 51,
+      "B_only": 0,
+      "exact_two_sided_p": 8.881784197001252e-16
+    },
+    "coherence_check_withheld": {
+      "clean": "0/53",
+      "A": "30/53",
+      "B": "34/53",
+      "threshold": "minimum clean validation score (lenient to the baseline)"
+    },
+    "interpretation": "AECE responded to invalidation of decision-supporting evidence and not to invalidation of other regions; the B result follows from AECE's design, so H8-O verifies decision conditioning works as designed.",
+    "frozen_result_identity_sha256": "8ED6A36A77FC560EE977177C98F191880CDD150E4C6A04150AAB6DE28ABB491A"
+  },
+  "H8-P_runtime": {
+    "description": "Processing time per one-second decision window, 53 sessions, one warm-up excluded, unoptimised research implementation.",
+    "median_s": 2.59,
+    "p95_s": 2.94,
+    "max_s": 2.96,
+    "aece_spatial_verification_median_s": 1.52,
+    "cpu": "Intel Core i7-10750H (desktop/laptop CPU), Windows 11, Python 3.14, PyTorch 2.14 CPU",
+    "interpretation": "Not real-time on this CPU; optimisation and edge-device timing are future work.",
+    "frozen_result_identity_sha256": "ABE5959C42896856B685E6E151455DA7509F81BA8DD9E5750D65C0EBD9479CC1"
+  },
+  "limitations": [
+    "Post-hoc analyses.",
+    "Artificial phase-only interventions; not natural-confuser testing.",
+    "In H8-L and H8-O the reference hypothesis was held at its clean value; the reference path's response to modified recordings was not tested.",
+    "Not field or external validation; not a real-world false-alarm estimate.",
+    "AECE is a research module, not yet in the live detection loop."
+  ]
+}
